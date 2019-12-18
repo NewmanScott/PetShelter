@@ -1,0 +1,36 @@
+<h2>Know of a pet needing a home?</h2>
+
+<form (submit)="createPet()">
+    <div> 
+        <label>Pet name:</label>
+    
+        <input type="text" name="pet.name" [(ngModel)]="pet.name">
+        <span *ngIf="errors.name">{{errors.name.message}}</span>
+    </div>
+    <div>
+            <label>Pet type:</label>
+            <input type="text" name="pet.type" [(ngModel)] = "pet.type">
+            <span *ngIf="errors.type">{{errors.type.message}}</span>
+    </div>
+    <div>
+            <label>Description:</label>
+            <input type="text" name="pet.description" [(ngModel)]="pet.description">
+            <span *ngIf="errors.description">{{errors.description.message}}</span>
+    </div>
+    <div>
+        <label>Skill 1:</label>
+        <input type="text" name="pet.skill1" [(ngModel)]="pet.skill1">
+        <span *ngIf="errorsskill1">{{errors.skill1}}</span>
+        <label>Skill 2:</label>
+        <input type="text" name="pet.skill2" [(ngModel)]="pet.skill2">
+        <span *ngIf="errors.skill2">{{errors.skill2}}</span>
+        <label>Skill 3:</label>
+        <input type="text" name="pet.skill3" [(ngModel)]="pet.skill3">
+        <span *ngIf="errors.skill3">{{errors.skill3}}</span>
+    </div>
+   
+    
+    
+    <input class="btn btn-primary" type="submit" value="Create a pet"> | 
+    <button type="button" class="btn btn-primary" [routerLink]="['/']">Cancel</button>
+</form>
